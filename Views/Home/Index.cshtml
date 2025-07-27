@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    //kunin ang student objedct at list
+    var student = ViewBag.Student as ASP_NET_MVC_EXAM_Cherry_Quiño.Models.Student;
+    var students = ViewBag.Students as List<ASP_NET_MVC_EXAM_Cherry_Quiño.Models.Student>;
+
+}
+
+<h1>🧪 ASP.NET Core MVC Exam</h1>
+<h2>Part I - C# Fundamentals </h2>
+
+<p><strong>Student Name:</strong> @ViewBag.StudentName</p>
+<p><strong>Score:</strong> @ViewBag.Score</p>
+<p><strong>Passed?:</strong> @ViewBag.IsPassed</p>
+<p><strong>Message:</strong> @ViewBag.Message</p>
+
+<p><strong>Courses Taken:</strong> @ViewBag.CourseList</p>
+<p><strong>Number of Courses:</strong> @ViewBag.CourseCount</p>
+
+<p><strong>Tuition:</strong> @ViewBag.TuitionFee</p>
+<p><strong>Net Fee after Discount:</strong> @ViewBag.NetFee</p>
+
+<p><strong>Today is:</strong> @ViewBag.Today</p>
+
+<hr/>
+
+<h2>Part II - Student Object</h2>
+<p><strong>Student Details:</strong> @student.Name - @student.Age - @student.Course</p>
+
+<h3>All Students </h3>
+<table border="1" cellpadding="5">
+    <thead>
+       <tr>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Course</th>
+      </tr>
+    </thead>
+    <tbody>
+       
+    @foreach (var s in students)
+        {
+      <tr>
+           <td>@s.Name</td>
+           <td>@s.Age</td>
+           <td>@s.Course</td>
+      </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-center">
+    
+</div>
